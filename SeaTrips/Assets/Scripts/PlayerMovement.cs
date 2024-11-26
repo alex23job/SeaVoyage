@@ -9,11 +9,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private float hor, ver;
+
+    private Animator anim;
     Vector3 movement;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -32,6 +35,15 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move(float input)
     {
+        if (input != 0)
+        {
+
+            anim.SetFloat("Speed", Mathf.Abs(input) * 5f);
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0);
+        }
         transform.Translate(Vector3.forward * input * moveSpeed * Time.fixedDeltaTime);//Можно добавить Time.DeltaTime
     }
 
