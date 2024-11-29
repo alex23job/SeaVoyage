@@ -21,6 +21,7 @@ public class PiratShipControl : MonoBehaviour
     void Start()
     {
         timer = shotDelay;
+        target = transform.position;
     }
 
     // Update is called once per frame
