@@ -6,6 +6,10 @@ public class Terra : MonoBehaviour
 {
     [SerializeField] private ParticleSystem waterShot;
     [SerializeField] private GameObject piratShip;
+    [SerializeField] private GameObject miniShip;
+
+    private float timer = 1f;
+    private int countTime = 0, numCannonsGroup = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +17,31 @@ public class Terra : MonoBehaviour
         {
             piratShip.GetComponent<PiratShipControl>().SetMove(true);
         }
+        if (miniShip != null)
+        {
+            miniShip.GetComponent<MiniShipControl>().SetMove(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer > 0) timer -= Time.deltaTime;
+        else
+        {
+            timer = 1f;
+            if (miniShip.transform.position.x > -30 && miniShip.transform.position.x < 30)
+            {
+                countTime++;
+                if (countTime > 10)
+                {
+                    miniShip.GetComponent<MiniShipControl>().SetShoting(numCannonsGroup + 1);
+                    countTime = 0;
+                    numCannonsGroup++;numCannonsGroup %= 3;
+                }
+            }
+            else countTime = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
