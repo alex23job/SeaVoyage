@@ -12,6 +12,9 @@ public class MiniShipControl : MonoBehaviour
     [SerializeField] private float MoveSpeed = 5f;
 
     private float timer;
+    /// <summary>
+    /// режим стрельбы : 0 - нет стрельбы, 1 - левый борт, 2 - правый борт, 3 - корма
+    /// </summary>
     private int playShoting = 0;
     private bool isMove = false;
     private Vector3 target;

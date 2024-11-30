@@ -19,12 +19,6 @@ public class CannonBall : MonoBehaviour
         //rb = transform.gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetDamageAndDirection(int dm, Vector3 direction)
     {
         //Debug.Log($"sdad dm={dm} dir={direction}  rb={rb}");

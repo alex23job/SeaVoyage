@@ -37,6 +37,7 @@ public class CannonControl : MonoBehaviour
 
     private void ShotBall()
     {
+        spawnPoint = transform.GetChild(0).position;
         Vector3 direction = spawnPoint - transform.position;
         //Debug.Log($"(spawnPoint = {spawnPoint}) - (cannonPos = {transform.position})   =>    ( direction = {direction} )");
         int damage = Random.Range(ballDamageMin, ballDamageMax);

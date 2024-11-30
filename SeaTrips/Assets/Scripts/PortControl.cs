@@ -18,6 +18,7 @@ public class PortControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //return;
         if (timer > 0) timer -= Time.deltaTime;
         else
         {
