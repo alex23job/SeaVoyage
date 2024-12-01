@@ -6,6 +6,7 @@ public class CannonBall : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private float Speed = 20;
+    [SerializeField] private ParticleSystem woodPS;
 
     private Rigidbody rb;
 
@@ -30,6 +31,16 @@ public class CannonBall : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("ship"))
+        {
+            if (woodPS != null)
+            {
+                ParticleSystem ps = Instantiate(woodPS, transform.position, Quaternion.identity);
+                ps.Play();
+                Destroy(ps.gameObject, 1f);
+            }
+            Destroy(transform.gameObject);
+        }
+        if (collision.gameObject.CompareTag("water"))
         {
             Destroy(transform.gameObject);
         }

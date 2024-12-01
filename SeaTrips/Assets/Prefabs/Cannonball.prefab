@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   Speed: 50
+  woodPS: {fileID: 6378313577750328140, guid: fd91580b3b9358c49acd23a2da8e8479, type: 3}
