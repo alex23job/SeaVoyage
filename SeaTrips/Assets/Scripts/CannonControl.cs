@@ -49,6 +49,11 @@ public class CannonControl : MonoBehaviour
             direction.y = 0.1f;
             direction.x += Random.Range(-0.01f, 0.01f);
             cb.SetDamageAndDirection(damage, direction);
+            if (transform.parent != null)
+            {
+                MiniShipControl msc = transform.parent.parent.gameObject.GetComponent<MiniShipControl>();
+                if (msc != null) cb.SetNameShip(msc.NameShip);
+            }
             fire.Play();
         }
         Destroy(ball, 5f);

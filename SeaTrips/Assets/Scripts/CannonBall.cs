@@ -9,6 +9,7 @@ public class CannonBall : MonoBehaviour
     [SerializeField] private ParticleSystem woodPS;
 
     private Rigidbody rb;
+    private string nameMyShip;
 
     private void Awake()
     {
@@ -18,6 +19,11 @@ public class CannonBall : MonoBehaviour
     void Start()
     {
         //rb = transform.gameObject.GetComponent<Rigidbody>();
+    }
+
+    public void SetNameShip(string nm)
+    {
+        nameMyShip = nm;
     }
 
     public void SetDamageAndDirection(int dm, Vector3 direction)
@@ -34,6 +40,12 @@ public class CannonBall : MonoBehaviour
         {
             if (woodPS != null)
             {
+                MiniShipControl msc = collision.gameObject.GetComponent<MiniShipControl>();
+                if (msc != null)
+                {
+                    if (msc.NameShip == nameMyShip) return;
+                    msc.ChangeHP(-damage);
+                }
                 ParticleSystem ps = Instantiate(woodPS, transform.position, Quaternion.identity);
                 ps.Play();
                 Destroy(ps.gameObject, 1f);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PiratShipControl : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PiratShipControl : MonoBehaviour
     [SerializeField] private float shotDelay = 5f;
     [SerializeField] private Vector3[] points;
     [SerializeField] private float MoveSpeed = 5f;
+    [SerializeField] private string nameShip;
+    [SerializeField] private Image imgHP;
 
     private float timer;
     private int playShoting = 0;
