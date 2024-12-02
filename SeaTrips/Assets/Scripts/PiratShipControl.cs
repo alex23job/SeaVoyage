@@ -15,6 +15,9 @@ public class PiratShipControl : MonoBehaviour
     [SerializeField] private string nameShip;
     [SerializeField] private Image imgHP;
 
+    [SerializeField] private float radius = 5f;
+    [SerializeField] private LayerMask layerMask;
+
     public string NameShip { get { return nameShip; } }
     private float timer;
     /// <summary>
@@ -33,6 +36,7 @@ public class PiratShipControl : MonoBehaviour
     {
         timer = shotDelay;
         target = transform.position;
+        playShoting = 5;
     }
 
     // Update is called once per frame
@@ -146,23 +150,46 @@ public class PiratShipControl : MonoBehaviour
 
     private void Shoting()
     {
-        switch (playShoting)
+        Collider[] colls = Physics.OverlapSphere(transform.position, radius, layerMask);
+        if (colls.Length > 0)
         {
-            case 1:
-                ShotLeft(true);
-                ShotRight(false);
-                ShotBack(false);
-                break;
-            case 2:
-                ShotLeft(false);
-                ShotRight(true);
-                ShotBack(false);
-                break;
-            case 3:
-                ShotLeft(false);
-                ShotRight(false);
-                ShotBack(true);
-                break;
+            foreach (Collider col in colls)
+            {
+                Vector3 direction = col.transform.position - transform.position;
+                float angle = Mathf.Atan2(direction.z, direction.x);
+                angle *= (180f / Mathf.PI);
+                if (angle > 0 && angle < 135f) playShoting = 2;
+                else if (angle > 135f && angle < 225f) playShoting = 3;
+                else playShoting = 1;
+                Debug.Log($"nameShip={col.gameObject.GetComponent<MiniShipControl>().NameShip}   dir=>{direction}   angle=>{angle}   playShoting=>{playShoting}");
+            }
+            switch (playShoting)
+            {
+                case 1:
+                    ShotLeft(true);
+                    ShotRight(false);
+                    ShotBack(false);
+                    break;
+                case 2:
+                    ShotLeft(false);
+                    ShotRight(true);
+                    ShotBack(false);
+                    break;
+                case 3:
+                    ShotLeft(false);
+                    ShotRight(false);
+                    ShotBack(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            playShoting = 5;
+            ShotLeft(false);
+            ShotRight(false);
+            ShotBack(false);
         }
     }
     private void ShotLeft(bool isShoting)

@@ -4889,8 +4889,13 @@ MonoBehaviour:
   - {x: 65, y: 0.3, z: -40}
   - {x: 65, y: 0.3, z: -10}
   MoveSpeed: 5
+  DownSpeed: 2
   nameShip: BlackPearl
   imgHP: {fileID: 948201105}
+  radius: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &808733011
 MonoBehaviour:
   m_ObjectHideFlags: 0
