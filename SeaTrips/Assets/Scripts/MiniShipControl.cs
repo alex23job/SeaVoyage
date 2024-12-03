@@ -66,7 +66,8 @@ public class MiniShipControl : MonoBehaviour
             {
                 Vector3 delta = target - transform.position;
 
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), 10 * Time.deltaTime);
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), 10 * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), Time.deltaTime);
 
                 transform.Translate(delta.normalized * MoveSpeed * Time.deltaTime, Space.World);
             }

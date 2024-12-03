@@ -75,7 +75,8 @@ public class PiratShipControl : MonoBehaviour
                 //Vector3 newDirection = Vector3.RotateTowards(transform.forward, delta, 10 * Time.fixedDeltaTime, 0);
                 //transform.rotation = Quaternion.LookRotation(newDirection);
 
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), 10 * Time.deltaTime);
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), 10 * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(delta), Time.deltaTime);
                 //print($"tr.r={transform.rotation}   delta={delta}");
                 //float rotY = transform.rotation.eulerAngles.y + 10 * Time.deltaTime;
                 //print($"y={transform.rotation.eulerAngles.y}  rotY={rotY}");
