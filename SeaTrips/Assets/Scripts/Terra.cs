@@ -8,6 +8,7 @@ public class Terra : MonoBehaviour
     [SerializeField] private GameObject piratShip;
     [SerializeField] private GameObject miniShip;
     [SerializeField] private GameObject corvet;
+    [SerializeField] private GameObject caravel;
 
     private float timer = 1f;
     private int countTime = 0, numCannonsGroup = 0;
@@ -38,6 +39,7 @@ public class Terra : MonoBehaviour
                 {
                     corvet.GetComponent<MiniShipControl>().SetShoting(numCannonsGroup + 1);
                     miniShip.GetComponent<MiniShipControl>().SetShoting(numCannonsGroup + 1);
+                    caravel.GetComponent<MiniShipControl>().SetShoting(numCannonsGroup + 1);
                     countTime = 0;
                     numCannonsGroup++;numCannonsGroup %= 3;
                 }
