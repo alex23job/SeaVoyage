@@ -1700,6 +1700,7 @@ GameObject:
   - component: {fileID: 231007612}
   - component: {fileID: 231007613}
   - component: {fileID: 231007614}
+  - component: {fileID: 231007615}
   m_Layer: 3
   m_Name: Corvet
   m_TagString: ship
@@ -1789,6 +1790,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipCanvas: {fileID: 405128473}
+--- !u!54 &231007615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231007610}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &243385629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4785,6 +4813,7 @@ GameObject:
   - component: {fileID: 624625559}
   - component: {fileID: 624625560}
   - component: {fileID: 624625561}
+  - component: {fileID: 624625562}
   m_Layer: 3
   m_Name: MiniShip
   m_TagString: ship
@@ -4875,6 +4904,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipCanvas: {fileID: 1933547000}
+--- !u!54 &624625562
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624625557}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &645501296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6153,6 +6209,7 @@ GameObject:
   - component: {fileID: 808733008}
   - component: {fileID: 808733010}
   - component: {fileID: 808733011}
+  - component: {fileID: 808733012}
   m_Layer: 0
   m_Name: PiratShip
   m_TagString: ship
@@ -6250,6 +6307,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipCanvas: {fileID: 854311255}
+--- !u!54 &808733012
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808733006}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &839758511
 GameObject:
   m_ObjectHideFlags: 0
@@ -10870,6 +10954,7 @@ GameObject:
   - component: {fileID: 1617858942}
   - component: {fileID: 1617858941}
   - component: {fileID: 1617858944}
+  - component: {fileID: 1617858945}
   m_Layer: 0
   m_Name: Caravel
   m_TagString: ship
@@ -10957,6 +11042,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipCanvas: {fileID: 2118599966}
+--- !u!54 &1617858945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617858940}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1619271453
 GameObject:
   m_ObjectHideFlags: 0
