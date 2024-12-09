@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class TripsUI : MonoBehaviour
 {
+    [SerializeField] private Text txtCountSteps;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,11 @@ public class TripsUI : MonoBehaviour
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("HarborScene");
+    }
+
+    public void ViewContSteps(int n)
+    {
+        txtCountSteps.text = n.ToString();
     }
 
 }
