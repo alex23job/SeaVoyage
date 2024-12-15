@@ -19,8 +19,11 @@ public class LevelControl : MonoBehaviour
 
     [SerializeField] private DiceControl diceControl;
 
+    [SerializeField] private TripsUI tripsUI;
+
     private GameObject[] arrTile;
     private GameObject[] arrFog;
+    private int currentStepsCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,8 +67,16 @@ public class LevelControl : MonoBehaviour
         //txtDebug.text = $"freeCeils x={pos.x} y={pos.z}";
     }
 
+    public void TranslateCount(int zn)
+    {
+        //txtDebug.text = $"freeCeils x={pos.x} y={pos.z}";
+        currentStepsCount += zn;
+        tripsUI.ViewContSteps(currentStepsCount);
+    }
+
     public void TurnDice()
     {
+        currentStepsCount = 0;
         diceControl.TurnDice();
     }
 
